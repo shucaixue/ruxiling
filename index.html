@@ -1438,14 +1438,14 @@ const allProducts = [
     { id: 2, name: '氧化锌 ZnO', category: 'positive', badge: 'best', badgeText: '畅销', spec: '白色粉末 | 1720℃升华 | 铅酸电池重要功能性添加剂 | 防止枝晶短路', colors: ['#8B9DAF','#6B8FA8'] },
     { id: 3, name: '硫酸亚锡 SnSO₄', category: 'positive', badge: 'new', badgeText: '新品', spec: '白色或浅黄色结晶性粉末 | 活性物质利用率从32.4%提升至38.6%', colors: ['#6B8E6B','#4A6B4A'] },
     { id: 4, name: '氧化锡 SnO₂', category: 'positive', badge: '', badgeText: '', spec: '纯白/浅灰白色超细粉末 | 密度6.95g/cm³ | 金红石型四方晶系 | 耐酸导电氧化物', colors: ['#7A8B9A','#5A6B7A'] },
-    { id: 5, name: '氧化锑 Sb₂O₃/Sb₂O₅', category: 'positive', badge: '', badgeText: '', spec: '三氧化二锑/五氧化二锑 | 白色立方晶体/淡黄色粉末 | 稳固活性物质防软化掉膏', colors: ['#9A8B7A','#7A6B5A'] },
+    { id: 5, name: '氧化锑 Sb₂O₃/Sb₂O₅', category: 'positive', badge: '', badgeText: '', img: 'images/氧化锑020.png', spec: '三氧化二锑/五氧化二锑 | 白色立方晶体/淡黄色粉末 | 稳固活性物质防软化掉膏', colors: ['#9A8B7A','#7A6B5A'] },
     { id: 6, name: '氧化铟 In₂O₃', category: 'positive', badge: 'new', badgeText: '新品', spec: '白色至浅黄色粉末 | 熔点2000℃ | 纳米In₂O₃比表面积大、表面活性高', colors: ['#D4D4A8','#B8B88A'] },
     { id: 7, name: '改性红丹 Pb₃O₄', category: 'positive', badge: '', badgeText: '', spec: '传统红丹物理/化学改性 | 保留强氧化性、优化结构稳定性 | 首放容量提升5%-10%', colors: ['#C45A3A','#A04020'] },
     // 负极材料
     { id: 8, name: '硫酸钡 BaSO₄', category: 'negative', badge: 'best', badgeText: '畅销', spec: '无色无味 | 密度4.499g/cm³ | 熔点1580℃ | 铅酸电池负极必不可少的无机添加剂', colors: ['#8B9DAF','#6B8FA8'] },
     { id: 9, name: '石墨烯 Graphene', category: 'negative', badge: 'hot', badgeText: '热门', spec: '单层二维平面膜 | 厚度仅0.335nm | 新材料之王 | 构建三维导电网络', colors: ['#3A4A5A','#2A3A4A'] },
     { id: 10, name: '腐植酸 Humic Acid', category: 'negative', badge: '', badgeText: '', spec: '天然缩合大分子羟基芳香羧酸类物质 | 常规循环次数提升30%以上', colors: ['#5A4A3A','#4A3A2A'] },
-    { id: 11, name: '木质素 Sodium Ligninsulfonate', category: 'negative', badge: 'best', badgeText: '畅销', spec: '木质素磺酸盐 | 天然高分子化合物 | -18℃冷启动放电时长提升1倍以上', colors: ['#A07050','#8A6040'] },
+    { id: 11, name: '木质素 Sodium Ligninsulfonate', category: 'negative', badge: 'best', badgeText: '畅销', img: 'images/木质素.png', spec: '木质素磺酸盐 | 天然高分子化合物 | -18℃冷启动放电时长提升1倍以上', colors: ['#A07050','#8A6040'] },
     { id: 12, name: '乙炔黑 Denka Black', category: 'negative', badge: '', badgeText: '', spec: '纯度99%以上 | 碳含量>99.5% | 粒径30-45nm | 高导电、高导热、耐氧化', colors: ['#2A2A2A','#1A1A1A'] },
     { id: 13, name: '低温剂 Cryoprotectant', category: 'negative', badge: 'new', badgeText: '新品', spec: '易溶于水、酸性温和 | 弱还原、降黏度特性 | 改善负极结晶、界面、离子传输', colors: ['#6B8E8E','#5A7D7D'] },
     { id: 14, name: '碳纳米管 CNTs', category: 'negative', badge: 'hot', badgeText: '热门', spec: '中空一维量子材料 | 管径几十纳米 | 长度可达微米、毫米 | 100%深度放电循环寿命提升50%以上', colors: ['#2A3A2A','#1A2A1A'] },
@@ -1474,7 +1474,7 @@ function renderProducts(page) {
 
     grid.innerHTML = pageItems.map(p => `
         <div class="product-card">
-            <div class="product-img" style="background: linear-gradient(135deg, ${p.colors[0]}, ${p.colors[1]})">
+            <div class="product-img" style="background: ${p.img ? `url('${p.img}') center/cover no-repeat` : `linear-gradient(135deg, ${p.colors[0]}, ${p.colors[1]})`}">
                 ${p.badge ? `<span class="product-badge badge-${p.badge}">${p.badgeText}</span>` : ''}
             </div>
             <div class="product-info">
