@@ -1,0 +1,1533 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>湖南昱烯瓴新材料有限公司 — 铅酸电池正负极材料与高能复合材料研发与生产企业</title>
+    <meta name="description" content="湖南昱烯瓴新材料有限公司是国家级高新技术企业，深耕铅酸电池正负极辅助材料研发与产业化。主营三氧化二铋、抑氢剂、氧化锌、石墨烯、碳纳米管等铅酸电池专用材料及高能密度复合材料。">
+    <meta name="keywords" content="铅酸电池材料,三氧化二铋,抑氢剂,氧化锌,石墨烯,碳纳米管,硫酸钡,木质素,乙炔黑,改性红丹,铋锑锡氧化物,铅酸电池,电池添加剂,新材料">
+    <meta property="og:title" content="湖南昱烯瓴新材料有限公司 — 铅酸电池正负极材料与高能复合材料">
+    <meta property="og:description" content="国家级高新技术企业，20年纳米材料研发积淀，专注铅酸电池正负极辅助材料优化与高能复合材料研发。">
+    <meta property="og:type" content="website">
+    <style>
+        :root {
+            --primary: #C41E3A;
+            --primary-dark: #9A1830;
+            --primary-light: #FDE8EC;
+            --secondary: #1A3A5C;
+            --accent: #D4A843;
+            --accent-light: #FCF5E3;
+            --dark: #1A1A2E;
+            --gray-900: #212529;
+            --gray-700: #495057;
+            --gray-500: #6C757D;
+            --gray-300: #DEE2E6;
+            --gray-100: #F8F9FA;
+            --white: #FFFFFF;
+            --shadow-sm: 0 2px 8px rgba(0,0,0,0.06);
+            --shadow-md: 0 4px 20px rgba(0,0,0,0.1);
+            --shadow-lg: 0 8px 40px rgba(0,0,0,0.12);
+            --radius: 12px;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+            color: var(--gray-900);
+            line-height: 1.7;
+            background: var(--white);
+            overflow-x: hidden;
+        }
+
+        /* ─── NAV ─── */
+        .nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 16px 0;
+            transition: var(--transition);
+            background: transparent;
+        }
+        .nav.scrolled {
+            background: rgba(255,255,255,0.96);
+            backdrop-filter: blur(20px);
+            box-shadow: 0 2px 20px rgba(0,0,0,0.08);
+            padding: 10px 0;
+        }
+        .nav-inner {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 40px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .nav-logo {
+            font-size: 1.4rem;
+            font-weight: 800;
+            letter-spacing: 1px;
+            color: var(--white);
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .nav-logo::before {
+            content: '';
+            display: inline-block;
+            width: 32px;
+            height: 32px;
+            background: var(--primary);
+            border-radius: 50%;
+            background-image: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.3) 0%, transparent 60%);
+        }
+        .nav.scrolled .nav-logo { color: var(--dark); }
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 36px;
+        }
+        .nav-links a {
+            text-decoration: none;
+            color: rgba(255,255,255,0.85);
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: var(--transition);
+            position: relative;
+            padding-bottom: 4px;
+        }
+        .nav.scrolled .nav-links a { color: var(--gray-700); }
+        .nav-links a:hover { color: var(--accent); }
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent);
+            transition: width 0.3s;
+        }
+        .nav-links a:hover::after { width: 100%; }
+
+        .mobile-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            z-index: 1001;
+        }
+        .mobile-toggle span {
+            width: 26px;
+            height: 2px;
+            background: var(--white);
+            transition: var(--transition);
+            border-radius: 2px;
+        }
+        .nav.scrolled .mobile-toggle span { background: var(--dark); }
+
+        /* ─── HERO ─── */
+        .hero-slider {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            min-height: 600px;
+            overflow: hidden;
+        }
+        .hero-slide {
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            opacity: 0;
+            transition: opacity 0.8s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .hero-slide.active { opacity: 1; }
+        .hero-slide::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(26,58,92,0.85) 0%, rgba(26,30,46,0.7) 50%, rgba(0,0,0,0.4) 100%);
+            z-index: 1;
+        }
+        .hero-slide .bg {
+            position: absolute;
+            inset: 0;
+            background-size: cover;
+            background-position: center;
+            transform: scale(1.05);
+            transition: transform 6s ease;
+        }
+        .hero-slide.active .bg { transform: scale(1); }
+        .hero-slide:nth-child(1) .bg {
+            background: linear-gradient(135deg, #0a1628 0%, #0d2137 30%, #1a3a5c 60%, #16213e 100%);
+        }
+        .hero-slide:nth-child(2) .bg {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+        }
+        .hero-slide:nth-child(3) .bg {
+            background: linear-gradient(135deg, #0f2027 0%, #203a43 50%, #2c5364 100%);
+        }
+        .hero-slide .pattern {
+            position: absolute;
+            inset: 0;
+            z-index: 1;
+            opacity: 0.08;
+            background-image:
+                linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px);
+            background-size: 60px 60px;
+        }
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            max-width: 900px;
+            padding: 0 40px;
+        }
+        .hero-tag {
+            display: inline-block;
+            padding: 6px 20px;
+            border: 1px solid rgba(255,255,255,0.4);
+            border-radius: 50px;
+            color: rgba(255,255,255,0.9);
+            font-size: 0.85rem;
+            letter-spacing: 3px;
+            margin-bottom: 28px;
+            text-transform: uppercase;
+        }
+        .hero-title {
+            font-size: clamp(2.2rem, 5vw, 3.8rem);
+            font-weight: 800;
+            color: var(--white);
+            line-height: 1.25;
+            margin-bottom: 20px;
+            letter-spacing: 2px;
+        }
+        .hero-title em {
+            font-style: normal;
+            color: var(--accent);
+        }
+        .hero-desc {
+            font-size: 1.15rem;
+            color: rgba(255,255,255,0.75);
+            margin-bottom: 40px;
+            line-height: 1.8;
+        }
+        .hero-btns {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 14px 36px;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            letter-spacing: 1px;
+        }
+        .btn-primary {
+            background: var(--primary);
+            color: var(--white);
+            box-shadow: 0 4px 20px rgba(196,30,58,0.35);
+        }
+        .btn-primary:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 28px rgba(196,30,58,0.45);
+        }
+        .btn-outline {
+            background: transparent;
+            color: var(--white);
+            border: 2px solid rgba(255,255,255,0.5);
+        }
+        .btn-outline:hover {
+            background: rgba(255,255,255,0.1);
+            border-color: var(--white);
+        }
+
+        .hero-dots {
+            position: absolute;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 12px;
+            z-index: 2;
+        }
+        .hero-dots button {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            border: 2px solid rgba(255,255,255,0.5);
+            background: transparent;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        .hero-dots button.active {
+            background: var(--accent);
+            border-color: var(--accent);
+            transform: scale(1.2);
+        }
+
+        .scroll-hint {
+            position: absolute;
+            bottom: 30px;
+            right: 50px;
+            z-index: 2;
+            color: rgba(255,255,255,0.5);
+            font-size: 0.8rem;
+            letter-spacing: 2px;
+            animation: bounce 2s infinite;
+        }
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        /* ─── SECTIONS ─── */
+        section { padding: 100px 40px; }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+        }
+
+        .section-label {
+            display: inline-block;
+            padding: 4px 16px;
+            background: var(--primary-light);
+            color: var(--primary);
+            font-size: 0.82rem;
+            font-weight: 700;
+            border-radius: 50px;
+            letter-spacing: 2px;
+            margin-bottom: 12px;
+        }
+        .section-title {
+            font-size: clamp(1.8rem, 3.5vw, 2.4rem);
+            font-weight: 800;
+            color: var(--dark);
+            margin-bottom: 16px;
+            letter-spacing: 1px;
+        }
+        .section-subtitle {
+            font-size: 1.05rem;
+            color: var(--gray-500);
+            max-width: 600px;
+            line-height: 1.8;
+            margin-bottom: 60px;
+        }
+        .text-center { text-align: center; }
+        .mx-auto { margin-left: auto; margin-right: auto; }
+
+        /* ─── ABOUT ─── */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+        .about-image {
+            position: relative;
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow-lg);
+        }
+        .about-image .img-placeholder {
+            width: 100%;
+            aspect-ratio: 4/3;
+            background: linear-gradient(135deg, #1a3a5c 0%, #2d5a87 50%, #1a3a5c 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            color: var(--white);
+            opacity: 0.9;
+        }
+        .about-image .exp-badge {
+            position: absolute;
+            bottom: -20px;
+            right: -20px;
+            background: var(--primary);
+            color: var(--white);
+            padding: 24px 32px;
+            border-radius: var(--radius);
+            box-shadow: 0 8px 30px rgba(196,30,58,0.3);
+            text-align: center;
+        }
+        .exp-badge .num { font-size: 2rem; font-weight: 800; line-height: 1; }
+        .exp-badge .txt { font-size: 0.85rem; opacity: 0.9; margin-top: 4px; }
+        .about-text h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 20px;
+        }
+        .about-text p {
+            color: var(--gray-700);
+            margin-bottom: 16px;
+            line-height: 1.9;
+        }
+
+        /* Stats */
+        .stats-row {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+            margin-top: 60px;
+        }
+        .stat-item {
+            text-align: center;
+            padding: 32px 20px;
+            background: var(--white);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition);
+        }
+        .stat-item:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-md);
+        }
+        .stat-number {
+            font-size: 2.4rem;
+            font-weight: 800;
+            color: var(--primary);
+            line-height: 1;
+            margin-bottom: 8px;
+        }
+        .stat-label {
+            font-size: 0.9rem;
+            color: var(--gray-500);
+        }
+
+        /* Timeline */
+        .timeline {
+            position: relative;
+            margin-top: 60px;
+            padding: 20px 0;
+        }
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: var(--gray-300);
+            transform: translateX(-50%);
+        }
+        .timeline-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 40px;
+            position: relative;
+        }
+        .timeline-item:nth-child(odd) { flex-direction: row; }
+        .timeline-item:nth-child(even) { flex-direction: row-reverse; }
+        .timeline-year {
+            flex: 0 0 140px;
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--primary);
+            text-align: center;
+        }
+        .timeline-dot {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 14px;
+            height: 14px;
+            background: var(--accent);
+            border-radius: 50%;
+            border: 3px solid var(--white);
+            box-shadow: 0 0 0 3px var(--accent-light);
+            z-index: 2;
+        }
+        .timeline-content {
+            flex: 1;
+            max-width: 400px;
+            background: var(--white);
+            padding: 24px;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow-sm);
+            margin: 0 40px;
+        }
+        .timeline-content h4 { font-size: 1.1rem; color: var(--dark); margin-bottom: 8px; }
+        .timeline-content p { font-size: 0.9rem; color: var(--gray-500); }
+
+        /* ─── PRODUCTS ─── */
+        .bg-light { background: var(--gray-100); }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 28px;
+        }
+        .product-card {
+            background: var(--white);
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition);
+            position: relative;
+        }
+        .product-card:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-md);
+        }
+        .product-img {
+            width: 100%;
+            aspect-ratio: 4/3;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: var(--white);
+            opacity: 0.9;
+            position: relative;
+            overflow: hidden;
+        }
+        .product-badge {
+            position: absolute;
+            top: 12px;
+            left: 12px;
+            padding: 4px 14px;
+            border-radius: 50px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+        .badge-hot { background: #C41E3A; color: #fff; }
+        .badge-new { background: #D4A843; color: #fff; }
+        .badge-best { background: #1A3A5C; color: #fff; }
+        .product-info { padding: 20px; }
+        .product-info h4 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 8px;
+        }
+        .product-info .specs {
+            font-size: 0.85rem;
+            color: var(--gray-500);
+            margin-bottom: 16px;
+            line-height: 1.6;
+        }
+        .product-info .btn-sm {
+            display: inline-block;
+            padding: 8px 24px;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        .product-info .btn-sm:hover {
+            background: var(--primary);
+            color: var(--white);
+        }
+
+        .product-categories {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+        .product-cat-btn {
+            padding: 10px 24px;
+            border-radius: 50px;
+            border: 2px solid var(--gray-300);
+            background: var(--white);
+            cursor: pointer;
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--gray-700);
+            transition: var(--transition);
+        }
+        .product-cat-btn.active {
+            background: var(--primary);
+            color: var(--white);
+            border-color: var(--primary);
+            box-shadow: 0 4px 16px rgba(196,30,58,0.25);
+        }
+        .product-cat-btn:hover:not(.active) {
+            border-color: var(--primary);
+            color: var(--primary);
+        }
+
+        /* Pagination */
+        .pagination {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            margin-top: 48px;
+        }
+        .pagination button {
+            width: 40px;
+            height: 40px;
+            border-radius: 8px;
+            border: 1px solid var(--gray-300);
+            background: var(--white);
+            cursor: pointer;
+            font-size: 0.9rem;
+            color: var(--gray-700);
+            transition: var(--transition);
+        }
+        .pagination button.active {
+            background: var(--primary);
+            color: var(--white);
+            border-color: var(--primary);
+        }
+        .pagination button:hover:not(.active) {
+            border-color: var(--primary);
+            color: var(--primary);
+        }
+
+        /* ─── TECH / INNOVATION ─── */
+        .tech-tabs {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .tech-tab {
+            padding: 10px 28px;
+            border-radius: 50px;
+            border: 2px solid var(--gray-300);
+            background: var(--white);
+            cursor: pointer;
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--gray-700);
+            transition: var(--transition);
+        }
+        .tech-tab.active {
+            background: var(--primary);
+            color: var(--white);
+            border-color: var(--primary);
+            box-shadow: 0 4px 16px rgba(196,30,58,0.25);
+        }
+        .tech-tab:hover:not(.active) {
+            border-color: var(--primary);
+            color: var(--primary);
+        }
+        .tech-panel {
+            display: none;
+            animation: fadeSlideIn 0.4s ease;
+        }
+        .tech-panel.active { display: block; }
+        @keyframes fadeSlideIn {
+            from { opacity: 0; transform: translateY(16px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .tech-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+        .tech-visual {
+            aspect-ratio: 4/3;
+            border-radius: var(--radius);
+            background: linear-gradient(135deg, #1a3a5c 0%, #2d5a87 50%, #1a3a5c 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            color: var(--white);
+            box-shadow: var(--shadow-md);
+        }
+        .tech-detail h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 16px;
+        }
+        .tech-detail p {
+            color: var(--gray-700);
+            line-height: 1.9;
+            margin-bottom: 16px;
+        }
+        .tech-specs {
+            list-style: none;
+            padding: 0;
+        }
+        .tech-specs li {
+            padding: 10px 0;
+            border-bottom: 1px solid var(--gray-300);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--gray-700);
+            font-size: 0.95rem;
+        }
+        .tech-specs li::before {
+            content: '◆';
+            color: var(--accent);
+            font-size: 0.6rem;
+        }
+
+        /* ─── CERTIFICATIONS ─── */
+        .cert-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+            margin-top: 40px;
+        }
+        .cert-item {
+            text-align: center;
+            padding: 32px 16px;
+            background: var(--white);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition);
+        }
+        .cert-item:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); }
+        .cert-icon {
+            font-size: 2.5rem;
+            margin-bottom: 12px;
+        }
+        .cert-item h4 {
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--dark);
+        }
+        .cert-item p {
+            font-size: 0.85rem;
+            color: var(--gray-500);
+            margin-top: 8px;
+        }
+
+        /* ─── NEWS ─── */
+        .news-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 28px;
+        }
+        .news-card {
+            background: var(--white);
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition);
+        }
+        .news-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-md);
+        }
+        .news-img {
+            width: 100%;
+            aspect-ratio: 16/10;
+            position: relative;
+        }
+        .news-date {
+            position: absolute;
+            top: 16px;
+            left: 16px;
+            background: rgba(255,255,255,0.95);
+            padding: 6px 14px;
+            border-radius: 6px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+        .news-body { padding: 24px; }
+        .news-body h4 {
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 10px;
+            line-height: 1.5;
+        }
+        .news-body p {
+            font-size: 0.9rem;
+            color: var(--gray-500);
+            line-height: 1.7;
+            margin-bottom: 16px;
+        }
+        .news-body a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+        .news-body a:hover { text-decoration: underline; }
+
+        /* ─── FOOTER ─── */
+        footer {
+            background: var(--dark);
+            color: rgba(255,255,255,0.7);
+            padding: 64px 40px 32px;
+        }
+        .footer-grid {
+            max-width: 1280px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 48px;
+            margin-bottom: 48px;
+        }
+        .footer-brand h3 {
+            font-size: 1.4rem;
+            color: var(--white);
+            margin-bottom: 16px;
+        }
+        .footer-brand p { font-size: 0.9rem; line-height: 1.8; }
+        .footer-col h4 {
+            font-size: 1rem;
+            color: var(--white);
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+        .footer-col a {
+            display: block;
+            color: rgba(255,255,255,0.6);
+            text-decoration: none;
+            font-size: 0.9rem;
+            margin-bottom: 10px;
+            transition: var(--transition);
+        }
+        .footer-col a:hover { color: var(--accent); }
+        .footer-bottom {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding-top: 24px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            text-align: center;
+            font-size: 0.85rem;
+        }
+
+        /* ─── REVEAL ANIMATION ─── */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ─── RESPONSIVE ─── */
+        @media (max-width: 1024px) {
+            .about-grid { grid-template-columns: 1fr; }
+            .tech-grid { grid-template-columns: 1fr; }
+            .news-grid { grid-template-columns: repeat(2, 1fr); }
+            .cert-grid { grid-template-columns: repeat(2, 1fr); }
+            .footer-grid { grid-template-columns: 1fr 1fr; }
+            .stats-row { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media (max-width: 768px) {
+            section { padding: 60px 20px; }
+            .nav-inner { padding: 0 20px; }
+            .nav-links {
+                position: fixed;
+                inset: 0;
+                background: rgba(0,0,0,0.95);
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                gap: 32px;
+                opacity: 0;
+                pointer-events: none;
+                transition: opacity 0.3s;
+            }
+            .nav-links.open {
+                opacity: 1;
+                pointer-events: all;
+            }
+            .nav-links a { font-size: 1.2rem; color: var(--white) !important; }
+            .mobile-toggle { display: flex; }
+
+            .products-grid { grid-template-columns: repeat(2, 1fr); }
+            .news-grid { grid-template-columns: 1fr; }
+            .cert-grid { grid-template-columns: 1fr; }
+            .footer-grid { grid-template-columns: 1fr; }
+            .stats-row { grid-template-columns: repeat(2, 1fr); }
+
+            .timeline::before { left: 20px; }
+            .timeline-item,
+            .timeline-item:nth-child(even) { flex-direction: column; align-items: flex-start; padding-left: 50px; }
+            .timeline-year { font-size: 1.3rem; }
+            .timeline-dot { left: 20px; }
+            .timeline-content { margin: 8px 0 0 0; max-width: 100%; }
+
+            .hero-title { font-size: 1.8rem; }
+            .hero-desc { font-size: 1rem; }
+
+            .scroll-hint { display: none; }
+        }
+        @media (max-width: 480px) {
+            .products-grid { grid-template-columns: 1fr; }
+            .cert-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- ─── NAV ─── -->
+<nav class="nav" id="nav">
+    <div class="nav-inner">
+        <div class="nav-logo">昱烯瓴新材料</div>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#home">首页</a></li>
+            <li><a href="#about">关于我们</a></li>
+            <li><a href="#products">产品中心</a></li>
+            <li><a href="#tech">技术创新</a></li>
+            <li><a href="#news">新闻动态</a></li>
+            <li><a href="#contact">联系我们</a></li>
+        </ul>
+        <div class="mobile-toggle" id="mobileToggle">
+            <span></span><span></span><span></span>
+        </div>
+    </div>
+</nav>
+
+<!-- ─── HERO ─── -->
+<section class="hero-slider" id="home">
+    <div class="hero-slide active">
+        <div class="bg"></div>
+        <div class="pattern"></div>
+        <div class="hero-content">
+            <div class="hero-tag">STRIVE NOW TRIUMPH AHEAD</div>
+            <h1 class="hero-title">聚力精专 · <em>瓴航未来</em></h1>
+            <p class="hero-desc">湖南昱烯瓴新材料有限公司是国家级高新技术企业<br>深耕铅酸电池正负极辅助材料研发与产业化，20年纳米材料技术积淀</p>
+            <div class="hero-btns">
+                <a href="#about" class="btn btn-primary">了解我们</a>
+                <a href="#products" class="btn btn-outline">查看产品</a>
+            </div>
+        </div>
+    </div>
+    <div class="hero-slide">
+        <div class="bg"></div>
+        <div class="pattern"></div>
+        <div class="hero-content">
+            <div class="hero-tag">LEAD ACID BATTERY MATERIALS</div>
+            <h1 class="hero-title">材料创新 · <em>电池赋能</em></h1>
+            <p class="hero-desc">专注铅酸电池正负极材料优化与特种电解液配方升级<br>攻克电池导电性能不佳、使用寿命短等行业核心痛点</p>
+            <div class="hero-btns">
+                <a href="#products" class="btn btn-primary">产品中心</a>
+                <a href="#tech" class="btn btn-outline">技术方案</a>
+            </div>
+        </div>
+    </div>
+    <div class="hero-slide">
+        <div class="bg"></div>
+        <div class="pattern"></div>
+        <div class="hero-content">
+            <div class="hero-tag">HIGH ENERGY COMPOSITES</div>
+            <h1 class="hero-title">高能复合 · <em>性能跃升</em></h1>
+            <p class="hero-desc">铋基材料、导电浆料、石墨烯复合材料、碳纳米管等<br>铅酸电池专用辅助材料，助力客户破解产业化难题</p>
+            <div class="hero-btns">
+                <a href="#tech" class="btn btn-primary">技术方案</a>
+                <a href="#contact" class="btn btn-outline">商务合作</a>
+            </div>
+        </div>
+    </div>
+    <div class="hero-dots">
+        <button class="active" data-index="0"></button>
+        <button data-index="1"></button>
+        <button data-index="2"></button>
+    </div>
+    <div class="scroll-hint">SCROLL ↓</div>
+</section>
+
+<!-- ─── ABOUT ─── -->
+<section id="about">
+    <div class="container">
+        <div class="text-center reveal">
+            <span class="section-label">关于我们</span>
+            <h2 class="section-title">国家级高新技术企业 · 专注铅酸电池材料创新</h2>
+            <p class="section-subtitle mx-auto">
+                依托20年纳米材料研发积淀，聚焦铅酸电池行业核心痛点，针对性攻克电池导电性能不佳、使用寿命短等难题。
+            </p>
+        </div>
+        <div class="about-grid">
+            <div class="about-image reveal">
+                <div class="img-placeholder">🔋</div>
+                <div class="exp-badge">
+                    <div class="num">20+</div>
+                    <div class="txt">年纳米材料研发</div>
+                </div>
+            </div>
+            <div class="about-text reveal">
+                <h3>湖南昱烯瓴新材料有限公司</h3>
+                <p>
+                    公司是国家级高新技术企业，深耕功能材料研发与产业化领域，产品及服务广泛服务于电池、储能、新能源、半导体、电子材料等行业。公司已通过ISO9001质量管理体系认证。
+                </p>
+                <p>
+                    核心研发方向为铅酸电池正负极辅助材料优化、特种电解液配方升级。凭借持续技术攻关，实现铅酸电池充放电循环次数、使用寿命的跨越式提升。
+                </p>
+                <p>
+                    依托20年纳米材料研发积淀，公司主力研发铋基材料、导电浆料、石墨烯复合材料、单壁碳纳米管、碳纳米管/石墨烯分散体等铅酸电池专用辅助材料。自研的正负极辅助材料配方已成功应用于多家知名铅酸电池企业，市场认可度高。
+                </p>
+            </div>
+        </div>
+
+        <!-- Stats -->
+        <div class="stats-row reveal">
+            <div class="stat-item">
+                <div class="stat-number" data-count="20">0</div>
+                <div class="stat-label">+ 年纳米材料研发</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number" data-count="100">0</div>
+                <div class="stat-label">+ 产品规格</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number" data-count="50">0</div>
+                <div class="stat-label">+ 合作企业</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number" data-count="6">0</div>
+                <div class="stat-label">大电池技术方案</div>
+            </div>
+        </div>
+
+        <!-- Timeline -->
+        <div class="text-center reveal" style="margin-top: 80px;">
+            <span class="section-label">发展历程</span>
+            <h2 class="section-title">砥砺前行，不断超越</h2>
+        </div>
+        <div class="timeline reveal">
+            <div class="timeline-item">
+                <div class="timeline-year">2004</div>
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <h4>技术起航</h4>
+                    <p>核心团队组建，开始纳米材料研发，奠定铋基材料、碳纳米管等技术基础。</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-year">2010</div>
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <h4>材料突破</h4>
+                    <p>三氧化二铋、氧化锌等铅酸电池正极添加剂实现规模化生产，产品进入市场。</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-year">2018</div>
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <h4>体系完善</h4>
+                    <p>完善铅酸电池正负极材料体系，通过ISO9001认证，获评高新技术企业。</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-year">2022</div>
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <h4>荣誉加身</h4>
+                    <p>获评湖南省专精特新中小企业、湖南省新材料企业、园区财源成长奖。</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-year">2024</div>
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <h4>全面布局</h4>
+                    <p>完成规模化量产，拥有稳定、持续的供货能力，配套全流程专业技术服务。</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Certifications -->
+        <div class="text-center reveal" style="margin-top: 80px;">
+            <span class="section-label">荣誉资质</span>
+            <h2 class="section-title">权威认证，品质保障</h2>
+        </div>
+        <div class="cert-grid reveal">
+            <div class="cert-item">
+                <div class="cert-icon">🏆</div>
+                <h4>高新技术企业</h4>
+                <p>国家级认定</p>
+            </div>
+            <div class="cert-item">
+                <div class="cert-icon">📋</div>
+                <h4>ISO 9001</h4>
+                <p>质量管理体系</p>
+            </div>
+            <div class="cert-item">
+                <div class="cert-icon">🎖️</div>
+                <h4>专精特新中小企业</h4>
+                <p>湖南省认定</p>
+            </div>
+            <div class="cert-item">
+                <div class="cert-icon">🏅</div>
+                <h4>湖南省新材料企业</h4>
+                <p>省级认定</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ─── PRODUCTS ─── -->
+<section id="products" class="bg-light">
+    <div class="container">
+        <div class="text-center reveal">
+            <span class="section-label">产品中心</span>
+            <h2 class="section-title">铅酸电池正负极材料 · 高能复合材料</h2>
+            <p class="section-subtitle mx-auto">
+                覆盖正极添加剂、负极添加剂、高能密度复合材料三大体系，助力铅酸电池性能跃升。
+            </p>
+        </div>
+        <div class="product-categories reveal" id="productCategories">
+            <button class="product-cat-btn active" data-category="all">全部产品</button>
+            <button class="product-cat-btn" data-category="positive">正极材料</button>
+            <button class="product-cat-btn" data-category="negative">负极材料</button>
+            <button class="product-cat-btn" data-category="composite">高能复合材料</button>
+        </div>
+        <div class="products-grid reveal" id="productsGrid">
+            <!-- Generated by JS -->
+        </div>
+        <div class="pagination reveal" id="productsPagination"></div>
+    </div>
+</section>
+
+<!-- ─── TECH / INNOVATION ─── -->
+<section id="tech">
+    <div class="container">
+        <div class="text-center reveal">
+            <span class="section-label">技术创新</span>
+            <h2 class="section-title">电池技术方案 · 材料配方升级</h2>
+            <p class="section-subtitle mx-auto">
+                针对不同电池类型提供正负极材料配方技术升级包，系统性解决行业核心痛点。
+            </p>
+        </div>
+
+        <!-- R&D Stats -->
+        <div class="stats-row reveal" style="margin-bottom: 60px;">
+            <div class="stat-item">
+                <div class="stat-number" style="color: var(--primary);" data-count="6">0</div>
+                <div class="stat-label">电池技术方案</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number" style="color: var(--primary);" data-count="19">0</div>
+                <div class="stat-label">核心产品</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number" style="color: var(--primary);" data-count="50">0</div>
+                <div class="stat-label">%+ 循环寿命提升</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number" style="color: var(--primary);" data-count="100">0</div>
+                <div class="stat-label">%+ 产品合格率</div>
+            </div>
+        </div>
+
+        <!-- Tech Tabs -->
+        <div class="tech-tabs reveal" id="techTabs">
+            <button class="tech-tab active" data-tech="fla">富液式/开口式</button>
+            <button class="tech-tab" data-tech="vrla">阀控式密封</button>
+            <button class="tech-tab" data-tech="agm">AGM电池</button>
+            <button class="tech-tab" data-tech="gel">凝胶电池</button>
+            <button class="tech-tab" data-tech="deep">深循环电池</button>
+            <button class="tech-tab" data-tech="sli">启动型电池</button>
+        </div>
+
+        <div class="tech-panels reveal" id="techPanels">
+            <div class="tech-panel active" data-tech="fla">
+                <div class="tech-grid">
+                    <div class="tech-visual">🔋</div>
+                    <div class="tech-detail">
+                        <h3>富液式/开口式电池 (FLA) 技术方案</h3>
+                        <p>FLA电池电极完全浸没在自由流动的液态硫酸电解液中，充电时产生的氢气和氧气直接释放到外部大气。内阻低、瞬间放电能力强，是起动电池首选。</p>
+                        <p><strong>核心痛点：</strong>需定期维护加水、析气+酸雾污染、酸分层、正极PbO₂软化脱落、负极硫酸盐化、板栅腐蚀等。</p>
+                        <ul class="tech-specs">
+                            <li>管式正极结构：循环寿命提升50-100%，脱落降低80%+</li>
+                            <li>4BS四碱式固化：循环提升30-50%，衰减降低40%</li>
+                            <li>正极碳添加剂：利用率提升5-10%，充电接受+20%</li>
+                            <li>碳纳米管CNT：大电流+20%，低温+15%</li>
+                            <li>纳米炭黑：内阻降低15-20%，充电效率+15%</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="tech-panel" data-tech="vrla">
+                <div class="tech-grid">
+                    <div class="tech-visual">⚡</div>
+                    <div class="tech-detail">
+                        <h3>阀控式密封电池 (VRLA) 技术方案</h3>
+                        <p>依靠阴极氧复合原理实现密封，正常使用无酸雾、无需补水。充电时正极析出的O₂通过隔板扩散到负极复合生成水，复合效率可达95-99%，实现"密封"。</p>
+                        <p><strong>核心痛点：</strong>热失控、失水不可逆、GEL内阻大、深循环寿命有限、早期容量损失(PCL)、板栅腐蚀、负极硫酸盐化。</p>
+                        <ul class="tech-specs">
+                            <li>铅碳负极技术：PSoC寿命+50-100%，充电接受+30-50%</li>
+                            <li>石墨烯改性：电导率+50%，充电接受+40%</li>
+                            <li>CNT碳纳米管：大电流+20%，内阻-15%</li>
+                            <li>膨胀剂优化：容量+5-10%，循环+20-30%</li>
+                            <li>负极铅钙合金板栅：水耗-30%，自放电-40%</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="tech-panel" data-tech="agm">
+                <div class="tech-grid">
+                    <div class="tech-visual">🚗</div>
+                    <div class="tech-detail">
+                        <h3>AGM (吸液式玻璃纤维) 电池技术方案</h3>
+                        <p>吸附式超细玻璃纤维隔板阀控铅酸蓄电池，属于VRLA贫液密封电池。电解液全部吸附在超细玻璃纤维棉中，氧复合率≥98%，实现免维护，是汽车启停、UPS、通信后备主流电池。</p>
+                        <p><strong>核心痛点：</strong>热失控（致命弱点）、失水不可逆、深循环寿命有限、PSoC运行能力一般、早期容量损失、成本偏高、板栅腐蚀加速。</p>
+                        <ul class="tech-specs">
+                            <li>板栅辐射状/蜂窝设计：内阻-15-20%，腐蚀均匀化</li>
+                            <li>铅碳负极技术：PSoC+50-100%，充电接受+30-50%</li>
+                            <li>石墨烯改性：电导率+50%，充电接受+40%</li>
+                            <li>CNT碳纳米管：大电流+20%，内阻-15%</li>
+                            <li>纳米炭黑：内阻-15-20%，充电效率+15%</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="tech-panel" data-tech="gel">
+                <div class="tech-grid">
+                    <div class="tech-visual">🔧</div>
+                    <div class="tech-detail">
+                        <h3>凝胶电池 (GEL) 技术方案</h3>
+                        <p>通过添加气相二氧化硅(SiO₂)形成三维多孔网状结构的硅胶体，将硫酸包藏在凝胶骨架内部。电解液呈固态凝胶，外壳破损或倒置也不会漏酸，使用寿命更长。</p>
+                        <p><strong>核心痛点：</strong>内阻偏大、能量密度偏低、低温性能差、初期氧复合效率低、充电速度慢。</p>
+                        <ul class="tech-specs">
+                            <li>凝胶配方优化：纳米SiO₂粒径优化+纳米碳分散相，内阻-30-50%</li>
+                            <li>正极材料：管式正极+4BS固化+碳添加剂，循环寿命+50-100%</li>
+                            <li>负极材料：铅碳负极+膨胀剂优化+短纤维增强，PSoC寿命+50-100%</li>
+                            <li>板栅合金：Pb-Ca-Sn-Ag四元合金+Bi微合金化，腐蚀-25%</li>
+                            <li>制造工艺：多级真空灌装+高速剪切分散+AI视觉检测，良品率>99.5%</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="tech-panel" data-tech="deep">
+                <div class="tech-grid">
+                    <div class="tech-visual">☀️</div>
+                    <div class="tech-detail">
+                        <h3>深循环电池 (Deep Cycle) 技术方案</h3>
+                        <p>专为长时间持续供电和反复深度放电而设计的二次电池。提供较少但持续稳定的电量，能够深度放电至20%-80%的容量而不造成显著损坏，并在充电后恢复到接近原始容量。</p>
+                        <p><strong>核心痛点：</strong>正极PbO₂软化脱落、负极不可逆硫酸盐化、板栅腐蚀、活性物质利用率低、充电速度慢、低温性能差、PSoC运行能力差。</p>
+                        <ul class="tech-specs">
+                            <li>管式正极结构：循环+50-100%，脱落-80%+</li>
+                            <li>正极碳添加剂：利用率+5-10%，充电接受+20%</li>
+                            <li>石墨烯改性：负极电导率+50%，充电接受+40%</li>
+                            <li>CNT碳纳米管：大电流+20%，低温+15%</li>
+                            <li>铅碳负极技术：PSoC+50-100%，充电接受+30-50%</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="tech-panel" data-tech="sli">
+                <div class="tech-grid">
+                    <div class="tech-visual">🏁</div>
+                    <div class="tech-detail">
+                        <h3>启动型电池 (SLI) 技术方案</h3>
+                        <p>极板设计为薄片多层（通常8-12对正负极），以最大化与电解液的接触面积，专为短时间、大电流工作设计。启动发动机只需0.5-3秒，需要高冷启动电流（CCA）、低内阻、电压稳定性好。</p>
+                        <p><strong>核心痛点：</strong>极板薄→循环寿命短、大电流下电压降大、低温CCA衰减、充电接受能力差、板栅腐蚀加速、失水、耐振动性不足。</p>
+                        <ul class="tech-specs">
+                            <li>薄极板+多片数优化：CCA+15-20%，电压降-10%</li>
+                            <li>4BS/3BS混合固化：循环+30-50%，初期容量不降</li>
+                            <li>正极碳添加剂：CCA+10%，充电接受+15%</li>
+                            <li>碳纳米管(CNT)添加：CCA+20%，内阻-15%</li>
+                            <li>低温膨胀剂配方：-18°C CCA+15-20%</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ─── NEWS ─── -->
+<section id="news" class="bg-light">
+    <div class="container">
+        <div class="text-center reveal">
+            <span class="section-label">新闻动态</span>
+            <h2 class="section-title">了解最新资讯，关注材料前沿</h2>
+            <p class="section-subtitle mx-auto">
+                第一时间获取公司动态、技术突破和行业发展趋势。
+            </p>
+        </div>
+        <div class="news-grid reveal">
+            <div class="news-card">
+                <div class="news-img" style="background: linear-gradient(135deg, #1a3a5c, #c41e3a);">
+                    <div class="news-date">2024.06</div>
+                </div>
+                <div class="news-body">
+                    <h4>公司获评湖南省专精特新中小企业</h4>
+                    <p>凭借在铅酸电池正负极材料领域的核心技术和产业化能力，公司成功获评湖南省专精特新中小企业。</p>
+                    <a href="#">阅读更多 →</a>
+                </div>
+            </div>
+            <div class="news-card">
+                <div class="news-img" style="background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);">
+                    <div class="news-date">2024.05</div>
+                </div>
+                <div class="news-body">
+                    <h4>铅酸电池正负极材料产线完成规模化量产</h4>
+                    <p>公司完成规模化量产，拥有稳定、持续的供货能力，并配套全流程专业技术服务。</p>
+                    <a href="#">阅读更多 →</a>
+                </div>
+            </div>
+            <div class="news-card">
+                <div class="news-img" style="background: linear-gradient(135deg, #1a3a5c, #d4a843);">
+                    <div class="news-date">2024.04</div>
+                </div>
+                <div class="news-body">
+                    <h4>铋锑锡三元氧化物复合材料技术取得突破</h4>
+                    <p>公司在高能密度复合材料领域取得重要技术突破，铋锑锡三元氧化物在铅酸电池中的应用效果显著。</p>
+                    <a href="#">阅读更多 →</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ─── FOOTER ─── -->
+<footer id="contact">
+    <div class="footer-grid">
+        <div class="footer-brand">
+            <h3>湖南昱烯瓴新材料有限公司</h3>
+            <p>国家级高新技术企业，深耕铅酸电池正负极辅助材料研发与产业化。依托20年纳米材料研发积淀，为主营铋基材料、导电浆料、石墨烯复合材料、碳纳米管等铅酸电池专用辅助材料，助力客户破解产业化难题。</p>
+        </div>
+        <div class="footer-col">
+            <h4>快速导航</h4>
+            <a href="#about">关于我们</a>
+            <a href="#products">产品中心</a>
+            <a href="#tech">技术创新</a>
+            <a href="#news">新闻动态</a>
+        </div>
+        <div class="footer-col">
+            <h4>核心产品</h4>
+            <a href="#products">正极材料</a>
+            <a href="#products">负极材料</a>
+            <a href="#products">高能复合材料</a>
+            <a href="#tech">电池技术方案</a>
+        </div>
+        <div class="footer-col">
+            <h4>联系我们</h4>
+            <a href="tel:0745-2836166">电话：0745-2836166</a>
+            <a href="tel:18807473588">热线：18807473588</a>
+            <a href="tel:13947551881">热线：13947551881</a>
+            <a href="mailto:546945896@qq.com">邮箱：546945896@qq.com</a>
+            <a href="#">地址：湖南省怀化市怀化高新区标准厂房14栋</a>
+            <a href="https://www.ruisunm.cn" target="_blank">网址：www.ruisunm.cn</a>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>© 2024 湖南昱烯瓴新材料有限公司. All rights reserved. | 湘ICP备XXXXXXXX号</p>
+    </div>
+</footer>
+
+<script>
+// ─── Nav scroll effect ───
+const nav = document.getElementById('nav');
+const mobileToggle = document.getElementById('mobileToggle');
+const navLinks = document.getElementById('navLinks');
+
+window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 80);
+});
+
+mobileToggle.addEventListener('click', () => {
+    navLinks.classList.toggle('open');
+});
+
+navLinks.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => navLinks.classList.remove('open'));
+});
+
+// ─── Hero slider ───
+let currentSlide = 0;
+const slides = document.querySelectorAll('.hero-slide');
+const dots = document.querySelectorAll('.hero-dots button');
+let autoSlideInterval;
+
+function goToSlide(index) {
+    slides[currentSlide].classList.remove('active');
+    dots[currentSlide].classList.remove('active');
+    currentSlide = index;
+    slides[currentSlide].classList.add('active');
+    dots[currentSlide].classList.add('active');
+}
+
+function nextSlide() { goToSlide((currentSlide + 1) % slides.length); }
+
+dots.forEach(dot => {
+    dot.addEventListener('click', () => {
+        goToSlide(parseInt(dot.dataset.index));
+        resetAutoSlide();
+    });
+});
+
+function resetAutoSlide() {
+    clearInterval(autoSlideInterval);
+    autoSlideInterval = setInterval(nextSlide, 5000);
+}
+autoSlideInterval = setInterval(nextSlide, 5000);
+
+// ─── Scroll reveal ───
+const revealEls = document.querySelectorAll('.reveal');
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+        }
+    });
+}, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+
+revealEls.forEach(el => observer.observe(el));
+
+// ─── Counter animation ───
+const statNumbers = document.querySelectorAll('.stat-number[data-count]');
+const counterObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            const el = entry.target;
+            const target = parseInt(el.dataset.count);
+            const suffix = el.textContent.includes('+') ? '+' : '';
+            const duration = 2000;
+            const start = performance.now();
+            function update(ts) {
+                const progress = Math.min((ts - start) / duration, 1);
+                el.textContent = Math.floor(progress * target) + suffix;
+                if (progress < 1) requestAnimationFrame(update);
+            }
+            requestAnimationFrame(update);
+            counterObserver.unobserve(el);
+        }
+    });
+}, { threshold: 0.5 });
+
+statNumbers.forEach(el => counterObserver.observe(el));
+
+// ─── Tech tabs ───
+const techTabs = document.querySelectorAll('.tech-tab');
+const techPanels = document.querySelectorAll('.tech-panel');
+
+techTabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+        techTabs.forEach(t => t.classList.remove('active'));
+        techPanels.forEach(p => p.classList.remove('active'));
+        tab.classList.add('active');
+        document.querySelector(`.tech-panel[data-tech="${tab.dataset.tech}"]`).classList.add('active');
+    });
+});
+
+// ─── Products data ───
+const allProducts = [
+    // 正极材料
+    { name: '三氧化二铋 Bi₂O₃', category: 'positive', badge: 'hot', badgeText: '热门', spec: '分子量465.96 | 铋最稳定氧化物 | 黄色无机粉末 | 铅酸电池正极核心添加剂', colors: ['#D4A843','#B8923A'] },
+    { name: '抑氢剂 HE inhibitor', category: 'positive', badge: 'hot', badgeText: '热门', spec: '无机化合物 | 淡黄色/黄褐色粉末 | 循环寿命+25%~40% | 充电接受率+15%以上', colors: ['#C41E3A','#9A1830'] },
+    { name: '氧化锌 ZnO', category: 'positive', badge: 'best', badgeText: '畅销', spec: '白色粉末 | 1720℃升华 | 铅酸电池重要功能性添加剂 | 防止枝晶短路', colors: ['#8B9DAF','#6B8FA8'] },
+    { name: '硫酸亚锡 SnSO₄', category: 'positive', badge: 'new', badgeText: '新品', spec: '白色或浅黄色结晶性粉末 | 活性物质利用率从32.4%提升至38.6%', colors: ['#6B8E6B','#4A6B4A'] },
+    { name: '氧化锡 SnO₂', category: 'positive', badge: '', badgeText: '', spec: '纯白/浅灰白色超细粉末 | 密度6.95g/cm³ | 金红石型四方晶系 | 耐酸导电氧化物', colors: ['#7A8B9A','#5A6B7A'] },
+    { name: '氧化锑 Sb₂O₃/Sb₂O₅', category: 'positive', badge: '', badgeText: '', spec: '三氧化二锑/五氧化二锑 | 白色立方晶体/淡黄色粉末 | 稳固活性物质防软化掉膏', colors: ['#9A8B7A','#7A6B5A'] },
+    { name: '氧化铟 In₂O₃', category: 'positive', badge: 'new', badgeText: '新品', spec: '白色至浅黄色粉末 | 熔点2000℃ | 纳米In₂O₃比表面积大、表面活性高', colors: ['#D4D4A8','#B8B88A'] },
+    { name: '改性红丹 Pb₃O₄', category: 'positive', badge: '', badgeText: '', spec: '传统红丹物理/化学改性 | 保留强氧化性、优化结构稳定性 | 首放容量提升5%-10%', colors: ['#C45A3A','#A04020'] },
+    // 负极材料
+    { name: '硫酸钡 BaSO₄', category: 'negative', badge: 'best', badgeText: '畅销', spec: '无色无味 | 密度4.499g/cm³ | 熔点1580℃ | 铅酸电池负极必不可少的无机添加剂', colors: ['#8B9DAF','#6B8FA8'] },
+    { name: '石墨烯 Graphene', category: 'negative', badge: 'hot', badgeText: '热门', spec: '单层二维平面膜 | 厚度仅0.335nm | 新材料之王 | 构建三维导电网络', colors: ['#3A4A5A','#2A3A4A'] },
+    { name: '腐植酸 Humic Acid', category: 'negative', badge: '', badgeText: '', spec: '天然缩合大分子羟基芳香羧酸类物质 | 常规循环次数提升30%以上', colors: ['#5A4A3A','#4A3A2A'] },
+    { name: '木质素 Sodium Ligninsulfonate', category: 'negative', badge: 'best', badgeText: '畅销', spec: '木质素磺酸盐 | 天然高分子化合物 | -18℃冷启动放电时长提升1倍以上', colors: ['#A07050','#8A6040'] },
+    { name: '乙炔黑 Denka Black', category: 'negative', badge: '', badgeText: '', spec: '纯度99%以上 | 碳含量>99.5% | 粒径30-45nm | 高导电、高导热、耐氧化', colors: ['#2A2A2A','#1A1A1A'] },
+    { name: '低温剂 Cryoprotectant', category: 'negative', badge: 'new', badgeText: '新品', spec: '易溶于水、酸性温和 | 弱还原、降黏度特性 | 改善负极结晶、界面、离子传输', colors: ['#6B8E8E','#5A7D7D'] },
+    { name: '碳纳米管 CNTs', category: 'negative', badge: 'hot', badgeText: '热门', spec: '中空一维量子材料 | 管径几十纳米 | 长度可达微米、毫米 | 100%深度放电循环寿命提升50%以上', colors: ['#2A3A2A','#1A2A1A'] },
+    // 高能复合材料
+    { name: '铋锑锡三元氧化物 BiSbSnO₃', category: 'composite', badge: 'hot', badgeText: '热门', spec: 'Bi-Sb-Sn三元氧化物 | 强抑析氢 | 协同增效(1+1+1>3) | 提升电导与倍率', colors: ['#6B5A8A','#5A4A7A'] },
+    { name: '铅铋锡氟氧化物 PbBiSbSnO₂', category: 'composite', badge: 'new', badgeText: '新品', spec: '纳米固溶体 | 融合铋抑析气、锡导电、氟界面调控 | 深度循环寿命提升40%-75%', colors: ['#5A6B8A','#4A5A7A'] },
+    { name: '铋钛复合氧化物 BiTiO₃', category: 'composite', badge: '', badgeText: '', spec: '全维度正向改性添加剂 | 同步解决七大核心失效问题 | 循环寿命提升25%-40%', colors: ['#7A6B5A','#6A5B4A'] },
+    { name: '锡锑氧化物 SnSbO₂', category: 'composite', badge: '', badgeText: '', spec: '重掺杂n型高导电惰性氧化物 | 正极专用导电补强 | 深循环寿命提升20%-40%', colors: ['#8A7A6A','#7A6A5A'] },
+];
+
+let currentCategory = 'all';
+let currentPage = 1;
+const ITEMS_PER_PAGE = 6;
+
+function getFilteredProducts() {
+    if (currentCategory === 'all') return allProducts;
+    return allProducts.filter(p => p.category === currentCategory);
+}
+
+function renderProducts(page) {
+    const filtered = getFilteredProducts();
+    const totalPages = Math.ceil(filtered.length / ITEMS_PER_PAGE);
+    const grid = document.getElementById('productsGrid');
+    const start = (page - 1) * ITEMS_PER_PAGE;
+    const pageItems = filtered.slice(start, start + ITEMS_PER_PAGE);
+
+    grid.innerHTML = pageItems.map(p => `
+        <div class="product-card">
+            <div class="product-img" style="background: linear-gradient(135deg, ${p.colors[0]}, ${p.colors[1]})">
+                ${p.badge ? `<span class="product-badge badge-${p.badge}">${p.badgeText}</span>` : ''}
+            </div>
+            <div class="product-info">
+                <h4>${p.name}</h4>
+                <p class="specs">${p.spec}</p>
+                <a href="#" class="btn-sm">查看详情</a>
+            </div>
+        </div>
+    `).join('');
+
+    // Pagination
+    const pag = document.getElementById('productsPagination');
+    if (totalPages <= 1) {
+        pag.innerHTML = '';
+    } else {
+        let html = `<button ${page === 1 ? 'disabled style="opacity:0.3"' : ''} onclick="goToPage(${page - 1})">‹</button>`;
+        for (let i = 1; i <= totalPages; i++) {
+            html += `<button class="${i === page ? 'active' : ''}" onclick="goToPage(${i})">${i}</button>`;
+        }
+        html += `<button ${page === totalPages ? 'disabled style="opacity:0.3"' : ''} onclick="goToPage(${page + 1})">›</button>`;
+        pag.innerHTML = html;
+    }
+
+    // Re-observe new product cards
+    document.querySelectorAll('#productsGrid .product-card').forEach(card => {
+        card.classList.add('reveal');
+        observer.observe(card);
+        setTimeout(() => card.classList.add('visible'), 50);
+    });
+}
+
+function goToPage(page) {
+    const filtered = getFilteredProducts();
+    const totalPages = Math.ceil(filtered.length / ITEMS_PER_PAGE);
+    if (page < 1 || page > totalPages) return;
+    currentPage = page;
+    renderProducts(page);
+    document.getElementById('products').scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
+// Product category filtering
+const catButtons = document.querySelectorAll('.product-cat-btn');
+catButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+        catButtons.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        currentCategory = btn.dataset.category;
+        currentPage = 1;
+        renderProducts(1);
+    });
+});
+
+renderProducts(1);
+</script>
+</body>
+</html>
