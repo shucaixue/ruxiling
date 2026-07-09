@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>新闻详情 - 湖南昱烯瓴新材料有限公司</title>
+    <meta name="description" content="湖南昱烯瓴新材料有限公司新闻动态，了解公司最新技术突破、行业展会、企业荣誉等资讯。">
+    <style>
+        :root {
+            --primary: #C41E3A;
+            --primary-dark: #9A1830;
+            --primary-light: #FDE8EC;
+            --secondary: #1A3A5C;
+            --accent: #D4A843;
+            --accent-light: #FCF5E3;
+            --dark: #1A1A2E;
+            --gray-900: #212529;
+            --gray-700: #495057;
+            --gray-500: #6C757D;
+            --gray-300: #DEE2E6;
+            --gray-100: #F8F9FA;
+            --white: #FFFFFF;
+            --radius: 12px;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+            color: var(--gray-900);
+            line-height: 1.7;
+            background: var(--gray-100);
+        }
+        .nav {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(255,255,255,0.97);
+            backdrop-filter: blur(20px);
+            box-shadow: 0 2px 20px rgba(0,0,0,0.06);
+            padding: 10px 0;
+        }
+        .nav-inner {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 40px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .nav-logo {
+            font-size: 1.3rem;
+            font-weight: 800;
+            color: var(--dark);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .nav-logo::before {
+            content: '';
+            display: inline-block;
+            width: 28px;
+            height: 28px;
+            background: var(--primary);
+            border-radius: 50%;
+            background-image: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.3) 0%, transparent 60%);
+        }
+        .nav-back {
+            color: var(--gray-700);
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: var(--transition);
+        }
+        .nav-back:hover { color: var(--primary); }
+
+        .article-hero {
+            padding: 60px 40px 50px;
+            background: linear-gradient(135deg, var(--secondary), var(--dark));
+            color: var(--white);
+            text-align: center;
+        }
+        .breadcrumb {
+            font-size: 0.85rem;
+            margin-bottom: 16px;
+            opacity: 0.8;
+        }
+        .breadcrumb a { color: var(--accent); text-decoration: none; }
+        .breadcrumb a:hover { text-decoration: underline; }
+        .article-hero h1 {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+            line-height: 1.4;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .article-date {
+            font-size: 0.95rem;
+            opacity: 0.75;
+        }
+
+        .content-wrapper {
+            max-width: 860px;
+            margin: 0 auto;
+            padding: 40px 32px 60px;
+        }
+        .article-body {
+            font-size: 1.05rem;
+            line-height: 2;
+            color: var(--gray-900);
+        }
+        .article-body p {
+            margin-bottom: 20px;
+            text-indent: 2em;
+        }
+        .article-body h2 {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--secondary);
+            margin: 36px 0 16px;
+            padding-left: 12px;
+            border-left: 4px solid var(--primary);
+            text-indent: 0;
+        }
+        .article-body h3 {
+            font-size: 1.15rem;
+            font-weight: 600;
+            color: var(--dark);
+            margin: 24px 0 12px;
+            text-indent: 0;
+        }
+        .article-body strong { color: var(--secondary); }
+        .article-body ul { margin-bottom: 20px; padding-left: 2em; }
+        .article-body li { margin-bottom: 8px; }
+
+        .cta-bar {
+            text-align: center;
+            padding: 40px 32px;
+            margin-top: 40px;
+            background: linear-gradient(135deg, var(--primary-light), var(--accent-light));
+            border-radius: var(--radius);
+        }
+        .cta-bar h3 { font-size: 1.3rem; color: var(--secondary); margin-bottom: 8px; }
+        .cta-bar p { color: var(--gray-700); margin-bottom: 20px; }
+        .btn-contact {
+            display: inline-block;
+            padding: 12px 36px;
+            background: var(--primary);
+            color: var(--white);
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+        .btn-contact:hover { background: var(--primary-dark); transform: translateY(-2px); }
+
+        .related-news {
+            margin-top: 48px;
+            padding-top: 32px;
+            border-top: 1px solid var(--gray-300);
+        }
+        .related-news h3 { font-size: 1.2rem; margin-bottom: 20px; color: var(--secondary); }
+        .related-list { display: flex; flex-direction: column; gap: 12px; }
+        .related-item {
+            padding: 14px 18px;
+            background: var(--white);
+            border-radius: 8px;
+            text-decoration: none;
+            color: var(--gray-900);
+            transition: var(--transition);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .related-item:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.08); transform: translateX(4px); }
+        .related-item .rn-date { color: var(--gray-500); font-size: 0.85rem; white-space: nowrap; margin-left: 16px; }
+
+        .not-found { text-align: center; padding: 80px 40px; }
+        .not-found h2 { font-size: 1.5rem; margin-bottom: 12px; }
+        .not-found a { color: var(--primary); }
+
+        @media (max-width: 768px) {
+            .article-hero h1 { font-size: 1.4rem; }
+            .content-wrapper { padding: 24px 20px 40px; }
+            .article-body { font-size: 1rem; }
+        }
+    </style>
+</head>
+<body>
+
+<nav class="nav">
+    <div class="nav-inner">
+        <a href="index.html" class="nav-logo">湖南昱烯瓴新材料</a>
+        <a href="index.html#news" class="nav-back">← 返回新闻动态</a>
+    </div>
+</nav>
+
+<section class="article-hero" id="articleHero">
+    <div class="breadcrumb">
+        <a href="index.html">首页</a> / <a href="index.html#news">新闻动态</a> / <span id="bcTitle">文章详情</span>
+    </div>
+    <h1 id="articleTitle"></h1>
+    <div class="article-date" id="articleDate"></div>
+</section>
+
+<div class="content-wrapper">
+    <div class="article-body" id="articleBody"></div>
+
+    <div class="cta-bar">
+        <h3>对我们的技术和产品感兴趣？</h3>
+        <p>欢迎联系我们获取样品、技术方案或报价咨询</p>
+        <a href="index.html#contact" class="btn-contact">联系我们</a>
+    </div>
+
+    <div class="related-news" id="relatedNews"></div>
+
+    <div class="not-found" id="notFound" style="display:none">
+        <h2>文章未找到</h2>
+        <p>抱歉，您查找的新闻不存在。请返回 <a href="index.html#news">新闻动态</a> 浏览所有文章。</p>
+    </div>
+</div>
+
+<script>
+const newsDB = [
+    {
+        id: 0,
+        title: '深耕碳纳米新材料 赋能电池技术革新——CIBF2026深圳展会精彩回顾',
+        date: '2026-05-20',
+        summary: '2026年5月13—15日，全球电池行业年度盛宴——第十八届深圳国际电池技术交流会/展览会（CIBF2026）在深圳国际会展中心盛大启幕。湖南昱烯瓴新材料携碳纳米管、石墨烯导电剂、碳基复合功能材料等核心产品重磅亮相。',
+        body: `<p>2026年5月13—15日，全球电池行业年度盛宴——第十八届深圳国际电池技术交流会/展览会（CIBF2026）在深圳国际会展中心盛大启幕。本届展会以"链动全球·赋能绿色·驱动未来"为主题，汇聚3200余家产业链企业，集中展示动力电池、储能、3C电池及核心材料前沿成果。湖南昱烯瓴新材料有限公司携碳纳米管、石墨烯导电剂、碳基复合功能材料等核心产品重磅亮相，以前沿碳材技术赋能电池产业升级，成为展会碳材料领域焦点之一。</p>
+
+<h2>前沿碳材亮相，解锁电池性能新可能</h2>
+<p>作为深耕碳纳米新材料研发与产业化的高新技术企业，昱烯瓴新材料本次聚焦高导电、高稳定、长寿命三大核心优势，集中展示适配锂电池、固态电池、钠电池的全系列碳纳米材料解决方案，精准匹配行业高能量密度、快充、长循环的核心需求。</p>
+<p>展会现场，昱烯瓴重点展示碳纳米管（CNT）导电剂与石墨烯复合导电浆料两大核心产品，凭借一维管状结构构建三维导电网络，仅需0.5%—2%低添加量，即可显著降低电极内阻、提升电子传导效率，助力电池实现更高能量密度、更强快充能力、更长循环寿命。针对硅基负极300%体积膨胀痛点，公司碳纳米复合材料可形成柔性"纳米钢筋"骨架，有效缓冲应力、稳定导电网络，将循环寿命从500次延长至1500次以上，为高能量密度电池量产提供关键支撑。此外，适配固态电池的碳纳米管改性电解质材料同步展出，可优化电极-电解质界面，降低界面阻抗，推动固态电池商业化落地。</p>
+
+<h2>行业大咖齐聚，共探碳材创新与产业融合</h2>
+<p>展会期间，昱烯瓴新材料展位人气爆棚，吸引海内外电池厂商、电芯制造企业、科研机构等专业观众驻足交流。公司技术团队与行业同仁围绕碳纳米材料规模化制备、低成本应用、固态/钠电池适配技术等热点议题深入探讨，分享碳材在电池导电、界面改性、热管理领域的创新实践，共话产业技术融合新路径。</p>
+<p>凭借扎实的技术积累与产品优势，昱烯瓴新材料与多家头部电芯企业、储能系统集成商达成初步合作意向，聚焦技术协同、样品测试、批量供货等核心环节，为后续市场拓展奠定坚实基础。现场客户高度认可公司碳纳米材料在提升电池倍率性能、降低生产成本、增强安全性方面的核心价值，期待携手推动碳基新材料在新能源领域的规模化应用。</p>
+
+<h2>深耕技术创新，助力双碳目标落地</h2>
+<p>CIBF2026作为全球电池产业风向标，集中展现从"规模扩张"向"技术驱动、价值提升"的转型趋势。碳纳米材料作为电池核心材料创新的关键方向，正成为推动电池技术革新、破解性能瓶颈的核心力量。</p>
+<p>此次参展，昱烯瓴新材料不仅全面展示碳纳米领域的技术实力与创新成果，更深度融入全球电池产业链生态，精准把握行业前沿动态与市场需求。未来，公司将持续深耕碳纳米管、石墨烯、碳基复合材料研发与产业化，聚焦高纯度、高分散、低成本技术突破，不断优化产品性能与解决方案，为动力电池、储能电池、固态电池、钠电池等领域提供高性能碳材支撑。</p>
+<p>以碳材之力，赋能绿色未来。昱烯瓴新材料将始终坚守"创新驱动、材料报国"初心，持续加强技术创新与产业协同，助力全球电池技术革命，为"双碳"目标实现与新能源产业高质量发展贡献核心力量！</p>`
+    },
+    {
+        id: 1,
+        title: '董事长张家松先生应邀参加湖南省产学研合作促进会会员代表大会',
+        date: '2026-03-28',
+        summary: '湖南昱烯瓴新材料有限公司董事长张家松先生应邀参加湖南省产学研合作促进会会员代表大会暨助力湖南"企业服务年"双百工程启动仪式。',
+        body: `<p>湖南昱烯瓴新材料有限公司董事长张家松先生应邀参加湖南省产学研合作促进会会员代表大会暨助力湖南"企业服务年"双百工程启动仪式。</p>
+<p>在此次大会上，张家松董事长与众多院士专家、企业代表齐聚一堂，共同见证"双百工程"正式启动。该工程由湖南省产学研合作促进会联合相关单位发起，将组建百名专家服务团，深入百家重点企业，提供技术攻坚、创新赋能等精准服务，为湖南企业高质量发展注入强劲动能。</p>
+<p>作为专注石墨烯、碳纳米管及新型电池材料研发生产的科技创新型企业，昱烯瓴新材料始终坚持产学研深度融合的发展之路。张家松董事长表示："此次参会让我们深刻感受到湖南省对企业创新的重视与支持。我们将积极对接'双百工程'专家资源，加速核心技术突破与成果转化，为湖南新材料产业集群建设和'企业服务年'贡献昱烯力量！"</p>
+<p>未来，昱烯瓴新材料将继续秉持创新驱动理念，与高校院所、产业链伙伴携手并进，助力湖南打造具有核心竞争力的先进制造业高地！</p>`
+    },
+    {
+        id: 2,
+        title: '昱烯瓴：双季铵盐分散剂，开启碳系材料分散新纪元',
+        date: '2025-11-11',
+        summary: '在碳材料与功能高分子领域，分散性能决定材料价值。昱烯瓴自主研发的双季铵盐分散剂（Gemini型），凭借独特的双N头基分子结构，正在重塑碳纳米管、石墨烯及导电浆料的分散方式。',
+        body: `<p>在碳材料与功能高分子领域，分散性能决定材料价值。昱烯瓴自主研发的双季铵盐分散剂（Gemini型），凭借独特的双N头基分子结构，正在重塑碳纳米管、石墨烯及导电浆料的分散方式。</p>
+<p>与传统单链季铵盐不同，昱烯瓴双季铵盐分散剂拥有更低的临界胶束浓度（CMC），能显著降低体系表面张力，通过静电与疏水双重作用，快速打破团聚，实现碳纳米材料的高效、长期稳定分散。</p>
+<p>其分子结构稳定，在强酸、强碱及高盐体系中依然保持优异性能。除分散功能外，还兼具抗静电、抗菌防腐、润湿增溶等多重作用，可广泛应用于石油化工、电子浆料、涂料颜料、纺织印染及金属防护等领域。</p>
+<p>更重要的是，昱烯瓴系列分散剂绿色环保、低毒低残留，易生物降解，不会对环境造成二次污染，符合当下材料工业的可持续发展方向。</p>
+<p>昱烯瓴秉承"让碳材料更自由"的理念，致力于以先进的分子设计与精密工艺，为行业提供更高效、更安全、更可持续的分散解决方案。</p>
+<p>昱烯瓴双季铵盐分散剂——让分散更彻底，让性能更极致。</p>`
+    },
+    {
+        id: 3,
+        title: '石墨烯粉体：储能领域的革命性材料，通过微观结构创新重塑能源格局',
+        date: '2025-01',
+        summary: '石墨烯粉体作为储能领域的革命性材料，正通过微观结构创新重塑能源格局。从超级电容器到锂离子电池，从燃料电池到太阳能电池，石墨烯粉体正在各类储能器件中展现其独特的性能优势。',
+        body: `<p>石墨烯粉体作为储能领域的革命性材料，正通过微观结构创新重塑能源格局。从超级电容器到锂离子电池，从燃料电池到太阳能电池，石墨烯粉体正在各类储能器件中展现其独特的性能优势，为能源的高效存储与转化提供了前所未有的技术路径。</p>
+<p>石墨烯是由单层碳原子以sp²杂化方式构成的二维平面材料，厚度仅为0.335纳米，是世界上最薄的材料。其理论比表面积高达2630m²/g，电子迁移率达200000cm²/(V·s)，导热系数为5300W/(m·K)，杨氏模量高达1TPa。这些优异的物理化学性质使其成为储能材料领域的研究热点。</p>
+<p>在超级电容器方面，石墨烯粉体的超高比表面积使其具备优异的双电层电容性能，比电容可达150-250F/g，远高于活性炭等传统碳材料。在锂离子电池中，石墨烯作为导电添加剂或与硅基负极材料复合，可有效缓解硅材料的体积膨胀问题，提升负极循环稳定性。此外，石墨烯在锂硫电池、钠离子电池、金属空气电池等新一代储能体系中也展现出广阔的应用前景。</p>
+<p>湖南昱烯瓴新材料在石墨烯粉体制备与应用方面积累了丰富的经验，采用物理剥离法生产的电池级石墨烯粉体含氧官能团少、导电性优异，已在铅酸电池负极添加剂、锂离子电池导电剂等领域实现产业化应用，助力储能技术革新。</p>`
+    },
+    {
+        id: 4,
+        title: '打造国家级战略性新材料产业标杆项目——单壁碳纳米管量产化项目',
+        date: '2024-10',
+        summary: '湖南昱烯瓴新材料有限公司全力推进单壁碳纳米管量产化项目，致力于打造国家级战略性新材料产业标杆项目。',
+        body: `<p>湖南昱烯瓴新材料有限公司全力推进单壁碳纳米管量产化项目，致力于打造国家级战略性新材料产业标杆项目。</p>
+<p>单壁碳纳米管（SWCNT）是由单层石墨烯卷曲而成的中空一维纳米材料，管径通常在0.7-2nm之间，长度可达微米甚至毫米级别。相比多壁碳纳米管（MWCNT），单壁碳纳米管具有更高的比表面积、更优异的导电性能和更强的力学性能，被誉为新一代"超级碳材料"。</p>
+<p>单壁碳纳米管在锂离子电池导电剂、高性能复合材料增强、柔性电子器件、传感器、半导体芯片等领域具有广阔的应用前景。尤其在新能源领域，单壁碳纳米管导电浆料可大幅提升锂电池的能量密度、倍率性能和循环寿命，是下一代高端锂电池的关键核心材料。</p>
+<p>昱烯瓴新材料凭借在碳纳米材料领域的深厚积累，聚焦单壁碳纳米管的规模化制备技术攻关。公司以自主研发核心工艺与设备为基础，突破成本与良率瓶颈，推动单壁碳纳米管从实验室走向产业化。该项目的实施将填补国内高端单壁碳纳米管规模化生产的空白，为湖南省新材料产业集群建设和国家战略性新兴产业高质量发展提供核心材料支撑。</p>`
+    },
+    {
+        id: 5,
+        title: 'MXenes：由MAX相处理得到的类石墨烯结构材料——优异性质与潜在应用',
+        date: '2024-05-17',
+        summary: 'MXenes是一种新型的二维材料，由MAX相处理得到的类石墨烯结构，具有许多优异的性质和潜在的应用，近年来引起广泛的研究兴趣。',
+        body: `<p>MXenes是一种新型的二维材料，近年来引起了广泛的研究兴趣。它是由MAX相处理得到的类石墨烯结构材料，具有许多优异的性质和潜在的应用。</p>
+
+<h2>MXenes的起源与结构</h2>
+<p>MXenes最早由美国Drexel大学的Yury Gogotsi教授和Michel Barsoum教授于2011年发现。它们是由一类三元层状化合物MAX相剥离而来，具有统一的化学式Mn+1AXn，其中M是早期过渡金属，A是Ⅲ、Ⅳ主族元素，X是C或者N，n=1、2、3等。MXenes的结构特点是M原子和A原子层交替排列，形成近密堆积六方层状结构，X原子填充于八面体空隙。MXenes材料的二维结构类似于石墨烯，但具有不同的化学成分和性质。</p>
+
+<h2>MXenes的制备方法</h2>
+<p>制备MXenes的方法多种多样，随着研究的深入，制备工艺也在不断发展。目前常用的制备方法包括含氟溶液刻蚀和碱溶液化学刻蚀。含氟溶液刻蚀是最常用的方法，使用含F⁻离子的溶液（如HF溶液、LiF和HCl的混合物或NH₄HF₂溶液）将MAX相浸泡，使其破坏掉M-A键，然后将MXene从混合溶液中分离。碱溶液化学刻蚀则是通过含氟离子的溶液刻蚀MAX相来制备MXenes材料。</p>
+
+<h2>MXenes的性质与应用</h2>
+<p>MXenes材料具有优异的机械、电学、光学和电化学性质，展示出卓越的能源转换和电化学存储潜力。它们在锂/钠离子电池、超级电容器、光电催化剂、太阳能利用、生物医药和传感器等领域具有广泛的应用潜力。MXenes材料的导电性能接近金属，同时具有优异的亲水性，这使得它们在导电材料和电化学储能材料方面具有独特的优势。此外，MXenes材料还具有可调控的表面官能团，可以通过化学修饰来改变其性质和功能。</p>`
+    },
+    {
+        id: 6,
+        title: '石墨烯铜基复合材料：组成、制备与多领域应用',
+        date: '2024-05',
+        summary: '铜基石墨烯复合材料是一种新型复合材料，以铜或铜合金为基体，通过引入石墨烯作为增强相，从而显著提高材料的整体性能。',
+        body: `<p>铜基石墨烯复合材料是一种新型复合材料，它以铜或铜合金为基体，并通过引入石墨烯作为增强相，从而显著提高材料的整体性能。石墨烯是一种由碳原子以sp²杂化轨道形成的单层二维蜂窝状晶格结构，具有优异的机械、导电和导热性能。</p>
+
+<h2>组成与制备方法</h2>
+<h3>基体材料</h3>
+<p>主要是纯铜或铜合金。</p>
+<h3>增强相</h3>
+<p>石墨烯，通常以单层或多层形式存在。</p>
+<h3>制备方法</h3>
+<p><strong>粉末冶金法：</strong>将铜粉与石墨烯粉末均匀混合，通过压制和烧结制备复合材料。</p>
+<p><strong>电沉积法：</strong>在电解液中加入石墨烯，通过电沉积工艺使其与铜基体结合。</p>
+<p><strong>化学气相沉积（CVD）法：</strong>将石墨烯直接生长在铜基体表面。</p>
+<p><strong>热压烧结法：</strong>将混合均匀的铜粉和石墨烯在高温高压下烧结成型。</p>
+
+<h2>应用领域</h2>
+<p><strong>电子与电气工程：</strong>用于制造高导电、高导热的电子元件、散热片、互连材料等。</p>
+<p><strong>机械制造：</strong>用于制造高强度、高耐磨的机械零部件，如轴承、齿轮等。</p>
+<p><strong>热管理系统：</strong>在需要高效散热的领域，如高性能计算设备、LED照明等，铜基石墨烯复合材料可用于制造散热组件。</p>
+<p><strong>航空航天：</strong>由于其优异的综合性能，该材料在航空航天领域有广泛应用，如导电连接器、散热结构件等。</p>`
+    }
+];
+
+function getNews(id) {
+    return newsDB.find(n => n.id === id);
+}
+
+function renderNews() {
+    const params = new URLSearchParams(window.location.search);
+    const id = parseInt(params.get('id'));
+    const article = getNews(id);
+
+    if (!article) {
+        document.getElementById('articleHero').style.display = 'none';
+        document.getElementById('notFound').style.display = 'block';
+        document.getElementById('articleBody').innerHTML = '';
+        document.getElementById('relatedNews').innerHTML = '';
+        return;
+    }
+
+    document.getElementById('articleTitle').textContent = article.title;
+    document.getElementById('articleDate').textContent = article.date;
+    document.getElementById('bcTitle').textContent = article.title;
+    document.getElementById('articleBody').innerHTML = article.body;
+    document.title = article.title + ' - 湖南昱烯瓴新材料有限公司';
+
+    const related = newsDB.filter(n => n.id !== id);
+    document.getElementById('relatedNews').innerHTML = `
+        <h3>更多新闻动态</h3>
+        <div class="related-list">
+            ${related.map(n => `
+                <a href="news-detail.html?id=${n.id}" class="related-item">
+                    <span>${n.title}</span>
+                    <span class="rn-date">${n.date}</span>
+                </a>
+            `).join('')}
+        </div>`;
+}
+
+renderNews();
+</script>
+</body>
+</html>
