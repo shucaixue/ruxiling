@@ -657,6 +657,13 @@
             font-size: 4rem;
             color: var(--white);
             box-shadow: var(--shadow-md);
+            overflow: hidden;
+        }
+        .tech-visual img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: var(--radius);
         }
         .tech-detail h3 {
             font-size: 1.5rem;
@@ -1151,7 +1158,7 @@
         <div class="tech-panels reveal" id="techPanels">
             <div class="tech-panel active" data-tech="fla">
                 <div class="tech-grid">
-                    <div class="tech-visual">🔋</div>
+                    <div class="tech-visual"><img src="images/开口式电池.jpg" alt="富液式/开口式电池"></div>
                     <div class="tech-detail">
                         <h3>富液式/开口式电池 (FLA) 技术方案</h3>
                         <p>FLA电池电极完全浸没在自由流动的液态硫酸电解液中，充电时产生的氢气和氧气直接释放到外部大气。内阻低、瞬间放电能力强，是起动电池首选。</p>
@@ -1168,7 +1175,7 @@
             </div>
             <div class="tech-panel" data-tech="vrla">
                 <div class="tech-grid">
-                    <div class="tech-visual">⚡</div>
+                    <div class="tech-visual"><img src="images/阀控式密封电池.jpg" alt="阀控式密封电池"></div>
                     <div class="tech-detail">
                         <h3>阀控式密封电池 (VRLA) 技术方案</h3>
                         <p>依靠阴极氧复合原理实现密封，正常使用无酸雾、无需补水。充电时正极析出的O₂通过隔板扩散到负极复合生成水，复合效率可达95-99%，实现"密封"。</p>
@@ -1185,7 +1192,7 @@
             </div>
             <div class="tech-panel" data-tech="agm">
                 <div class="tech-grid">
-                    <div class="tech-visual">🚗</div>
+                    <div class="tech-visual"><img src="images/吸液式玻璃纤维电池.jpg" alt="AGM吸液式玻璃纤维电池"></div>
                     <div class="tech-detail">
                         <h3>AGM (吸液式玻璃纤维) 电池技术方案</h3>
                         <p>吸附式超细玻璃纤维隔板阀控铅酸蓄电池，属于VRLA贫液密封电池。电解液全部吸附在超细玻璃纤维棉中，氧复合率≥98%，实现免维护，是汽车启停、UPS、通信后备主流电池。</p>
@@ -1202,7 +1209,7 @@
             </div>
             <div class="tech-panel" data-tech="gel">
                 <div class="tech-grid">
-                    <div class="tech-visual">🔧</div>
+                    <div class="tech-visual"><img src="images/凝胶电池.jpg" alt="凝胶电池"></div>
                     <div class="tech-detail">
                         <h3>凝胶电池 (GEL) 技术方案</h3>
                         <p>通过添加气相二氧化硅(SiO₂)形成三维多孔网状结构的硅胶体，将硫酸包藏在凝胶骨架内部。电解液呈固态凝胶，外壳破损或倒置也不会漏酸，使用寿命更长。</p>
@@ -1219,7 +1226,7 @@
             </div>
             <div class="tech-panel" data-tech="deep">
                 <div class="tech-grid">
-                    <div class="tech-visual">☀️</div>
+                    <div class="tech-visual"><img src="images/深循环电池.jpg" alt="深循环电池"></div>
                     <div class="tech-detail">
                         <h3>深循环电池 (Deep Cycle) 技术方案</h3>
                         <p>专为长时间持续供电和反复深度放电而设计的二次电池。提供较少但持续稳定的电量，能够深度放电至20%-80%的容量而不造成显著损坏，并在充电后恢复到接近原始容量。</p>
@@ -1236,7 +1243,7 @@
             </div>
             <div class="tech-panel" data-tech="sli">
                 <div class="tech-grid">
-                    <div class="tech-visual">🏁</div>
+                    <div class="tech-visual"><img src="images/启动型电池.jpg" alt="启动型电池"></div>
                     <div class="tech-detail">
                         <h3>启动型电池 (SLI) 技术方案</h3>
                         <p>极板设计为薄片多层（通常8-12对正负极），以最大化与电解液的接触面积，专为短时间、大电流工作设计。启动发动机只需0.5-3秒，需要高冷启动电流（CCA）、低内阻、电压稳定性好。</p>
